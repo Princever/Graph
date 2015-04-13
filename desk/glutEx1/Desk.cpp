@@ -32,7 +32,7 @@ void Draw_Desk() // This function draws a triangle with RGB colors
 
 	glPushMatrix();
 	glTranslatef(0.25f, -0.2f, 0);	//坐标平移
-	glScalef(1, 1, 3);  //尺寸变换
+	glScalef(1, 1, 3);  //尺寸变换 
 	glutWireCube(0.2); //绘制线框立方体
 	glPopMatrix();
 
@@ -80,20 +80,20 @@ void redraw()
 	glLoadIdentity();									// Reset The Current Modelview Matrix
 	
 	glPushMatrix();
-		glTranslatef(-2.0f, 0.0f,-6.0f);		// Place the triangle Left
+		glTranslatef(-2.0f, 0.0f,-6.0f);		// Place the desk Left
 		glTranslatef(0.0f, fTranslate, 0.0f);	// Translate in Y direction
 		Draw_Desk();						// Draw desk					
 	glPopMatrix();
 
     glPushMatrix();
-		glTranslatef(0.0f, 0.0f,-6.0f);			// Place the triangle at Center
+		glTranslatef(0.0f, 0.0f,-6.0f);			// Place the desk at Center
 		glRotatef(fRotate, 0, 1.0f, 0);			// Rotate around Y axis
 		Draw_Desk();						// Draw desk
 	glPopMatrix();
 
 
 	glPushMatrix();
-		glTranslatef(2.0f,0.0f,-6.0f);			// Place the triangle Right
+		glTranslatef(2.0f,0.0f,-6.0f);			// Place the desk Right
 		glScalef(fScale, fScale, fScale);		// Scale with the same value in x,y,z direction
 		Draw_Desk();						// Draw desk						
 	glPopMatrix();
@@ -114,7 +114,7 @@ int main (int argc,  char *argv[])
   glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
 	glutInitWindowSize(640,480);                                                     ///////////////////////////////////////
   int windowHandle
-        = glutCreateWindow("Simple GLUT App");
+        = glutCreateWindow("Desk App");
 
   glutDisplayFunc(redraw);
 	glutReshapeFunc(reshape);			///////////////////////////////////////
